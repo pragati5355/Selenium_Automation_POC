@@ -22,7 +22,7 @@ public class SeleniumScript {
         driver.get("https://www.flipkart.com");
 
         driver.manage().window().maximize();
-        
+
         // Close the login popup if it appears
         try {
             WebElement closeLoginPopup = driver.findElement(By.xpath("//button[contains(text(),'✕')]"));
@@ -37,7 +37,7 @@ public class SeleniumScript {
         String mainPage = driver.getWindowHandle();
 
         driver.findElement(By.xpath("//div[normalize-space()='Apple iPhone 15 Plus (Blue, 128 GB)']")).click();
-        
+
         Set<String> allPages = driver.getWindowHandles();
 
         for (String page : allPages) {
@@ -54,7 +54,7 @@ public class SeleniumScript {
         for (WebElement product : products) {
             System.out.println(product.getText());
         }
-        
+
         driver.quit();
     }
 }
